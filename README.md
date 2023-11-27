@@ -24,7 +24,7 @@ We could abstract caching by wrapping the in-memory cache class in an applicatio
 
 Also a data layer or repository could have been added, as a third tier, to further segregate responsibilites and move the API data sourcing away from the service. However, due to the scale of the exercise and the general guidelines given of a two-hour implementation, this data access/repository could be added later on, if needed.
 
-We could look into adding a way to getting notified of changes to stories and their scores in the Hacker News API databse. At first glance the Firebase .NET SDK doesn’t support real-time listeners (no tick on real-time for C# column in https://firebase.google.com/docs/admin/setup) so it might not be possible to use it to get notified of changes to the best stories Ids API or changes to story objects themselves.
+We could look into adding a way to getting notified of changes to stories and their scores in the Hacker News API database (to help with caching expiration policies). At first glance the Firebase .NET SDK doesn’t support real-time listeners (no tick on real-time for C# column in https://firebase.google.com/docs/admin/setup) so it might not be possible to use it to get notified of changes to the best stories Ids API or changes to story objects themselves.
 
 C. How To Run
 
