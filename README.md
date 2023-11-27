@@ -26,6 +26,8 @@ Also a data layer or repository could have been added, as a third tier, to furth
 
 We could look into adding a way to getting notified of changes to stories and their scores in the Hacker News API database (to help with caching expiration policies). At first glance the Firebase .NET SDK doesn’t support real-time listeners (no tick on real-time for C# column in https://firebase.google.com/docs/admin/setup) so it might not be possible to use it to get notified of changes to the best stories Ids API or changes to story objects themselves.
 
+If the application was to scale out and change over time we could probably look into implementing versioning and revisting rounting as well if more endppoints and methods were added. Also we could look into adding the retrying of failed requests, multiplexing the handling of requests and its associated load balancing.
+
 C. How To Run
 
 Created with VS2022, ideally run on same environment by downloading, opening and running the solution locally. Then execute the only end-point method call from the Swagger page, for example. The same could be done from Postman or similar.
