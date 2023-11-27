@@ -1,5 +1,6 @@
 **RESTful API for Hacker News API**
 
+A. Implementation notes
 Only one endpoint has been implemented because the instructions say that the API should return an array.
 
 The controller doesn’t need to know about how the data (stories) are sourced, it should be independent from the data source (lean controller). 
@@ -18,4 +19,9 @@ We only have one endpoint with a parameterless get call so routing is straightfo
 
 We could abstract caching by wrapping the in-memory cache class in an application-specific cache class. This would allow us to separate the specific cache implementation from the service (and from the rest of the app if it was to scale).
 
+Also a data layer or repository could have been added, as a third tier, to further segregate responsibilites and move the API data sourcing away from the service. However, due to the scale of the exercise and the general guidelines given of a two-hour implementation, this data access/repository could be added later on, if needed.
+
 At first glance the Firebase .NET SDK doesn’t support real-time listeners (no tick on real-time for C# column in https://firebase.google.com/docs/admin/setup) so it might not be possible to use it to get notified of changes to the best stories Ids API or changes to story objects themselves.
+
+B. How To Run
+Created with VS2022, ideally run on same environment by downloading, opening and running the solution locally. Then execute the only end-point method call from the Swagger page, for example. The same could be done from Postman or similar.
