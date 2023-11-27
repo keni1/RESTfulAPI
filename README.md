@@ -6,7 +6,7 @@ Following the instructions, an endpoint has been implemented that returns an arr
 
 With regards to system design, the controller doesn’t need to know about how the data (stories) are sourced, it should be independent from the data source (lean controller). Based on this, a service layer handles the provision of story data to the controller.
 
-To reduce the workload on the Hacker News API, as requested, I’ve implemented in-memory caching. Since the stories’ scores could change any instant, then to cache we should allow for some expiration offset. This is to reflect potential changes to the best stories id list or to the story objects. Other pressure reduction methods such as rate limiting cannot be implemented on the client side.
+To reduce the workload on the Hacker News API, as requested, I’ve implemented in-memory caching. Since the stories’ scores could change any instant, then to cache we should allow for some expiration offset. This is to reflect potential changes to the best stories id list or to the story objects. Other pressure reduction methods such as rate limiting should be implemented on the server side.
 
 The provided implementation should be thread-safe because the only shared state is the cache and that’s thread-safe.
 
