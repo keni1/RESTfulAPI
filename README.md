@@ -14,9 +14,9 @@ If this small application was to scale in the future, properties such as ‘Time
 
 Returning thrown exceptions messages with detailed error description should be avoided for security purposes. Added filter for unhandled exceptions implemented in the class HttpResponseExceptionFilter.
 
-At first glance the Firebase .NET SDK doesn’t support real-time listeners (no tick on real-time column in https://firebase.google.com/docs/admin/setup) so it might not be possible to use it to get notified of changes to the best stories Ids API or changes to story objects themselves.
+At first glance the Firebase .NET SDK doesn’t support real-time listeners (no tick on real-time for C# column in https://firebase.google.com/docs/admin/setup) so it might not be possible to use it to get notified of changes to the best stories Ids API or changes to story objects themselves.
 
 We only have one endpoint with a parameterless get call so routing is straightforward. In addition no versioning considerations at this stage.
 
-We could abstract the caching by wrapping the in-memory cache class in an application-specific cache class. This would allow us to separate the specific cache implementation from the service (and from the rest of the app if it was to scale).
+We could abstract caching by wrapping the in-memory cache class in an application-specific cache class. This would allow us to separate the specific cache implementation from the service (and from the rest of the app if it was to scale).
 
